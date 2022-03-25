@@ -53,7 +53,7 @@ pub struct Config
 
 /// A function which can dynamically define newly used variables in a test.
 #[derive(Clone)]
-pub struct VariableLookup(fn(&str) -> Option<String>);
+pub struct VariableLookup(pub fn(&str) -> Option<String>);
 
 impl Config
 {
