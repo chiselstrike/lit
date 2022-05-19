@@ -48,6 +48,9 @@ pub struct Config
     /// Whether messages on the standard error streams emitted during test runs
     /// should always be shown.
     pub always_show_stderr: bool,
+    /// Whether messages on the standard output streams emitted during test runs
+    /// should always be shown when error occurs.
+    pub always_show_stdout: bool,
     /// Which shell to use (defaults to 'bash').
     pub shell: String,
     /// List of environment variables to be used on test invocation.
@@ -154,6 +157,7 @@ impl Default for Config
             save_artifacts_to_directory: None,
             dump_variable_resolution: false,
             always_show_stderr: false,
+            always_show_stdout: false,
             truncate_output_context_to_number_of_lines: Some(DEFAULT_MAX_OUTPUT_CONTEXT_LINE_COUNT),
             extra_executable_search_paths,
             shell: "bash".to_string(),

@@ -143,6 +143,15 @@ pub fn result(result: &TestResult, verbose: bool, config: &Config) {
                 print::textln(formatted_stderr);
                 print::line();
             }
+            if config.always_show_stdout {
+                print::textln("Corresponding standard output:");
+                print::line();
+
+                let formatted_stdout = crate::model::format_test_output("stdout", &output.stdout, 1, util::TruncateDirection::Top, config);
+                print::textln(formatted_stdout);
+                print::line();
+
+            }
         }
     }
 }
